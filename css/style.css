@@ -1,0 +1,526 @@
+/* Base */
+:root {
+  --bg-dark: #080808;
+  --bg-panel: rgba(10, 10, 10, 0.78);
+  --text-light: #f7f0eb;
+  --text-soft: #d8c8bc;
+  --accent: #ef0a8f;
+  --card: #b79d8b;
+  --card-soft: #d9dce4;
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  --radius: 1.25rem;
+  --max-width: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Montserrat", Arial, sans-serif;
+  color: var(--text-light);
+  background-color: var(--bg-dark);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-shell {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+.bg-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)), url("../assets/skak-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.home-page::before {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.7)), url("../assets/forside-bg.png");
+}
+
+.page-wrap {
+  width: min(100% - 2rem, var(--max-width));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-inner {
+  width: min(100% - 2rem, var(--max-width));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 0;
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Oswald", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.logo-link img {
+  width: 80px;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
+}
+
+.menu-toggle {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: var(--text-light);
+  border-radius: 0.8rem;
+  padding: 0.65rem 0.9rem;
+}
+
+.site-nav {
+  position: absolute;
+  right: 1rem;
+  top: calc(100% + 0.5rem);
+  width: min(18rem, calc(100vw - 2rem));
+  background: rgba(0, 0, 0, 0.92);
+  border-radius: 1rem;
+  padding: 0.75rem;
+  box-shadow: var(--shadow);
+  display: none;
+}
+
+.site-nav.is-open {
+  display: block;
+}
+
+.site-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-nav a {
+  display: block;
+  padding: 0.8rem 1rem;
+  border-radius: 0.75rem;
+  font-family: "Oswald", Arial, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.cta-link:hover,
+.cta-link:focus-visible,
+.image-link:hover,
+.image-link:focus-visible {
+  background: rgba(239, 10, 143, 0.18);
+  outline: none;
+}
+
+.hero {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 2rem 0 3rem;
+  min-height: calc(100vh - 88px);
+}
+
+.hero-card {
+  max-width: 32rem;
+  background: rgba(0, 0, 0, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.hero h1,
+.page-title,
+.form-title {
+  margin: 0 0 0.8rem;
+  font-family: "Oswald", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.05;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 9vw, 5.6rem);
+}
+
+.hero p,
+.section-intro {
+  margin: 0 0 1.1rem;
+  color: var(--text-soft);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.3rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
+
+.cta-link.secondary {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-visual {
+  justify-self: center;
+  max-width: 22rem;
+  display: flex;
+  justify-content: center;
+}
+
+.image-link {
+  display: inline-block;
+  border-radius: 1rem;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+}
+
+.image-link:hover,
+.image-link:focus-visible {
+  transform: translateY(-4px) scale(1.01);
+  filter: brightness(1.06);
+}
+
+.page-section {
+  padding: 1.5rem 0 3rem;
+}
+
+.content-panel {
+  background: rgba(0, 0, 0, 0.72);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.grid-courses {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: rgba(183, 157, 139, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.feature-card h2,
+.feature-card h3 {
+  margin-top: 0;
+  font-family: "Oswald", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.promo-image {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.info-columns {
+  display: grid;
+  gap: 1rem;
+}
+
+.nav-inline {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.nav-inline a {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--accent);
+  background: rgba(255, 255, 255, 0.04);
+  font-family: "Oswald", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.contact-card {
+  background: var(--card);
+  color: #fff;
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.form-layout {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.form-title {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-field label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  border: 0;
+  border-radius: 0.85rem;
+  padding: 0.9rem 1rem;
+  background: var(--card-soft);
+  color: #454554;
+}
+
+.form-field textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: start;
+  gap: 0.75rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.submit-button {
+  width: 100%;
+  border: 0;
+  border-radius: 0.9rem;
+  padding: 1rem 1.2rem;
+  background: var(--accent);
+  color: #fff;
+  font-family: "Oswald", Arial, sans-serif;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.submit-button:hover,
+.submit-button:focus-visible {
+  filter: brightness(1.08);
+  outline: none;
+}
+
+.contact-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-left: 0;
+}
+
+.contact-item h3 {
+  margin: 0 0 0.3rem;
+  font-family: "Oswald", Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.contact-item p {
+  margin: 0;
+}
+
+.site-footer {
+  padding: 1rem 0 2rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 800px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    position: static;
+    display: block;
+    width: auto;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .site-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .hero {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
+  }
+
+  .hero-visual {
+    max-width: 50rem;
+  }
+
+  .grid-courses {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "mental hvad"
+      "praktisk praktisk"
+      "hvorfor hvorfor";
+  }
+
+  #mental {
+    grid-area: mental;
+  }
+
+  #hvad {
+    grid-area: hvad;
+  }
+
+  #praktisk {
+    grid-area: praktisk;
+  }
+
+  #hvorfor {
+    grid-area: hvorfor;
+  }
+
+  #hvorfor .image-link {
+    display: block;
+    width: 100%;
+  }
+
+  #hvorfor img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .info-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+  }
+
+  .form-layout {
+    grid-template-columns: 2fr 0.9fr;
+    align-items: start;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-field.full {
+    grid-column: 1 / -1;
+  }
+
+  .submit-button {
+    font-size: 1.25rem;
+  }
+
+  .contact-list {
+    margin-top: 9rem;
+    margin-left: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header-inner,
+  .page-wrap {
+    width: min(100% - 4rem, var(--max-width));
+  }
+
+  .hero-card,
+  .content-panel,
+  .contact-card {
+    padding: 2rem;
+  }
+}
+
+/* Kun hestemanden på forsiden */
+.horse-man {
+  width: 460px;
+  max-width: none;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  .horse-man {
+    width: 775px;
+  }
+}

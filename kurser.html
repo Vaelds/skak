@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lær Skak for Voksne | Undervisning</title>
+  <meta name="description" content="Kursusside med undervisningsindhold og videre link til tilmeldingssiden.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="site-shell bg-page">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo-link" href="index.html" aria-label="Tilbage til forsiden">
+          <img src="assets/logo.png" alt="Dansk Skak Union logo">
+          <span>Lær Skak</span>
+        </a>
+
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false"
+          aria-controls="main-navigation">
+          Menu
+        </button>
+
+        <nav class="site-nav" id="main-navigation" data-nav aria-label="Primær navigation">
+          <ul>
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="kurser.html">Undervisning</a></li>
+            <li><a href="tilmelding.html">Tilmelding</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-wrap page-section">
+      <section class="content-panel" aria-labelledby="kurser-title">
+        <h1 class="page-title" id="kurser-title">Undervisning</h1>
+        <p class="section-intro">Siden følger skabelonen med navigation øverst, indhold i midten og en tydelig knap
+          videre til side 3.</p>
+
+        <ul class="nav-inline" aria-label="Undersider">
+          <li><a href="#mental">Mental træning</a></li>
+          <li><a href="#hvad">Hvad lærer du</a></li>
+          <li><a href="#praktisk">Praktisk info</a></li>
+          <li><a href="#hvorfor">Hvorfor lære skak</a></li>
+        </ul>
+
+        <div class="grid-courses">
+          <article class="feature-card" id="mental">
+            <h2>8 ugers kursus</h2>
+            <p>Et begynderhold for voksne, hvor du lærer brikkernes gang, simple åbninger, taktiske mønstre og god skik
+              ved brættet.</p>
+            <p>Forløbet er bygget op i overskuelige trin, så siden føles som et skakbræt og ikke som en murstensvæg.</p>
+          </article>
+
+          <article class="feature-card" id="hvad">
+            <h2>DU LÆRER</h2>
+            <div class="info-columns">
+              <div>
+                <h3>Spillet</h3>
+                <p>Regler, opstilling, rokade, en passant, mat og remis forklaret i et roligt tempo.</p>
+              </div>
+              <div>
+                <h3>Strategien</h3>
+                <p>Centerkontrol, udvikling, simple planer og hvordan man undgår de klassiske nybegynderfælder.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-card" id="praktisk">
+            <h2>Praktisk info</h2>
+            <p>Pris: 650 kr.</p>
+            <p>Varighed: 8 uger</p>
+            <p>Sted: Dansk Skak Union, København</p>
+            <p>Niveau: Voksne begyndere</p>
+          </article>
+
+          <article class="promo-image" id="hvorfor">
+            <a class="image-link" href="tilmelding.html" aria-label="Tryk på kasser-knappen for at gå til side 3">
+              <img src="assets/kasser-knap.webp" alt="Grafisk kursuslayout som linker videre til tilmeldingssiden">
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-wrap">
+        <p>Klik på logoet for at vende tilbage til side 1.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/menu.js"></script>
+</body>
+
+</html>

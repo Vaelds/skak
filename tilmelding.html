@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lær Skak for Voksne | Tilmelding</title>
+  <meta name="description"
+    content="Tilmeldingsside med responsivt kontaktformular-layout til skakundervisning for voksne.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="site-shell bg-page">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo-link" href="index.html" aria-label="Tilbage til forsiden">
+          <img src="assets/logo.png" alt="Dansk Skak Union logo">
+          <span>Lær Skak</span>
+        </a>
+
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false"
+          aria-controls="main-navigation">
+          Menu
+        </button>
+
+        <nav class="site-nav" id="main-navigation" data-nav aria-label="Primær navigation">
+          <ul>
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="kurser.html">Undervisning</a></li>
+            <li><a href="tilmelding.html">Tilmelding</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-wrap page-section">
+      <section class="contact-card" aria-labelledby="tilmelding-title">
+        <div class="form-layout">
+          <div>
+            <h1 class="form-title" id="tilmelding-title">Tilmelding begynderhold<br>for voksne</h1>
+
+            <form action="#" method="post">
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="first-name">Fornavn *</label>
+                  <input id="first-name" name="first-name" type="text" placeholder="Dit fornavn" required>
+                </div>
+
+                <div class="form-field">
+                  <label for="last-name">Efternavn *</label>
+                  <input id="last-name" name="last-name" type="text" placeholder="Dit efternavn" required>
+                </div>
+
+                <div class="form-field">
+                  <label for="email">E-mail *</label>
+                  <input id="email" name="email" type="email" placeholder="din@email.dk" required>
+                </div>
+
+                <div class="form-field">
+                  <label for="phone">Telefon</label>
+                  <input id="phone" name="phone" type="tel" placeholder="+45 12 34 56 78">
+                </div>
+
+                <div class="form-field">
+                  <label for="company">By / klub *</label>
+                  <input id="company" name="company" type="text" placeholder="Hvor kommer du fra?" required>
+                </div>
+
+                <div class="form-field">
+                  <label for="country">Land *</label>
+                  <select id="country" name="country" required>
+                    <option value="">Vælg land</option>
+                    <option>Danmark</option>
+                    <option>Sverige</option>
+                    <option>Norge</option>
+                    <option>Tyskland</option>
+                  </select>
+                </div>
+
+                <div class="form-field full">
+                  <label for="help">Hvordan kan vi hjælpe? *</label>
+                  <select id="help" name="help" required>
+                    <option value="">Vælg en mulighed</option>
+                    <option>Tilmelding til begynderhold</option>
+                    <option>Spørgsmål om niveau</option>
+                    <option>Praktisk information</option>
+                  </select>
+                </div>
+
+                <div class="form-field full">
+                  <label for="message">Besked *</label>
+                  <textarea id="message" name="message"
+                    placeholder="Fortæl lidt om dit niveau og hvad du gerne vil lære." required></textarea>
+                </div>
+              </div>
+
+              <div class="checkbox-row">
+                <input id="updates" name="updates" type="checkbox">
+                <label for="updates">Modtag opdateringer fra Dansk Skak Unions begynderhold for voksne.</label>
+              </div>
+
+              <button class="submit-button" type="submit">Send</button>
+            </form>
+          </div>
+
+          <aside aria-label="Kontaktoplysninger">
+            <dl class="contact-list">
+              <div class="contact-item">
+                <h3>Telefon</h3>
+                <p>+45 20 35 67 16</p>
+              </div>
+
+              <div class="contact-item">
+                <h3>Adresse</h3>
+                <p>Dansk Skak Union<br>Gambitvænget 64<br>2400 København K</p>
+              </div>
+
+              <div class="contact-item">
+                <h3>E-mail</h3>
+                <p>dsu@skak.dk</p>
+              </div>
+
+              <div class="contact-item">
+                <h3>Åbningstid</h3>
+                <p>Mandag til fredag<br>09.00 til 16.00</p>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-wrap">
+        <p>2026@Anders Vælds</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/menu.js"></script>
+</body>
+
+</html>
