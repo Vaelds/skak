@@ -124,6 +124,7 @@ textarea {
   color: var(--text-light);
   border-radius: 0.8rem;
   padding: 0.65rem 0.9rem;
+  cursor: pointer;
 }
 
 .site-nav {
@@ -403,6 +404,14 @@ textarea {
   font-size: 0.95rem;
 }
 
+/* Kun hestemanden på forsiden */
+.horse-man {
+  width: 460px;
+  max-width: none;
+  display: block;
+  margin: 0 auto;
+}
+
 @media (min-width: 800px) {
   .menu-toggle {
     display: none;
@@ -435,9 +444,9 @@ textarea {
   .grid-courses {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
+      "hvorfor hvorfor"
       "mental hvad"
-      "praktisk praktisk"
-      "hvorfor hvorfor";
+      "praktisk praktisk";
   }
 
   #mental {
@@ -496,6 +505,10 @@ textarea {
     margin-top: 9rem;
     margin-left: 2rem;
   }
+
+  .horse-man {
+    width: 775px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -508,19 +521,5 @@ textarea {
   .content-panel,
   .contact-card {
     padding: 2rem;
-  }
-}
-
-/* Kun hestemanden på forsiden */
-.horse-man {
-  width: 460px;
-  max-width: none;
-  display: block;
-  margin: 0 auto;
-}
-
-@media (min-width: 800px) {
-  .horse-man {
-    width: 775px;
   }
 }
