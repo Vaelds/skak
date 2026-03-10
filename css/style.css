@@ -274,7 +274,7 @@ textarea {
 .feature-card h3 {
   margin-top: 0;
   font-family: "Oswald", Arial, sans-serif;
-  text-transform: uppercase;
+  color: #fb4401;
   letter-spacing: 0.04em;
 }
 
