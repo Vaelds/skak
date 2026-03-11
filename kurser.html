@@ -4,17 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lær Skak for Voksne | Undervisning</title>
-  <meta name="description" content="Kursusside med undervisningsindhold og videre link til tilmeldingssiden.">
+  <title>Lær Skak for Voksne | Kursus</title>
+  <meta name="description"
+    content="Begynderkursus i skak for voksne med kursusindhold, praktisk info og link til tilmelding.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;500;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="course-page">
   <div class="site-shell bg-page">
     <header class="site-header">
       <div class="header-inner">
@@ -39,57 +41,123 @@
     </header>
 
     <main class="page-wrap page-section">
-      <section class="content-panel" aria-labelledby="kurser-title">
-        <h1 class="page-title" id="kurser-title">Undervisning</h1>
-        <p class="section-intro">Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>Illum culpa in nostrum
-          ipsa quisquam libero mollitia <br> ad amet, tempora perferendis porro ipsum laudantium <br>dolor incidunt
-          officiis. Officia
-          voluptas minima aut.
-        </p>
+      <section class="course-hero" aria-labelledby="kursus-title">
+        <div class="course-hero__copy">
+          <p class="course-kicker">Begynderkursus i skak for voksne</p>
+          <h1 class="course-hero__title" id="kursus-title">Lær skak i dit lokalområde</h1>
+          <p class="course-hero__lead">
+            Et roligt og socialt 8 ugers forløb arrangeret af Dansk Skak Union, hvor voksne
+            begyndere lærer spillets regler, åbninger, taktik og analyse uden at blive kastet direkte ud på dybt vand.
+          </p>
 
-        <ul class="nav-inline" aria-label="Undersider">
-          <li><a href="#mental">Mental træning</a></li>
-          <li><a href="#hvad">Hvad lærer du</a></li>
-          <li><a href="#praktisk">Praktisk info</a></li>
-          <li><a href="#hvorfor">Hvorfor lære skak</a></li>
-        </ul>
-
-        <div class="grid-courses">
-          <article class="feature-card" id="mental">
-            <h2>8 ugers kursus</h2>
-            <p>Et begynderhold for voksne, hvor du lærer brikkernes gang, simple åbninger, taktiske mønstre og god skik
-              ved brættet.</p>
-            <p>Forløbet er opdelt i klare trin, så processen hele tiden er til at overskue.</p>
-          </article>
-
-          <article class="feature-card" id="hvad">
-            <h2>DU LÆRER</h2>
-            <div class="info-columns">
-              <div>
-                <h3>Spillet</h3>
-                <p>Regler, opstilling, rokade, en passant, mat og remis forklaret i et roligt tempo.</p>
-              </div>
-              <div>
-                <h3>Strategi</h3>
-                <p>Centerkontrol, udvikling, simple planer og hvordan man undgår de klassiske nybegynderfælder.</p>
-              </div>
+          <div class="course-badges" aria-label="Kort kursusoversigt">
+            <div class="course-badge">
+              <strong>1 aften</strong>
+              <span>om ugen</span>
             </div>
-          </article>
+            <div class="course-badge">
+              <strong>2,5 timer</strong>
+              <span>undervisning</span>
+            </div>
+            <div class="course-badge">
+              <strong>Max 12</strong>
+              <span>deltagere</span>
+            </div>
+          </div>
 
-          <article class="feature-card" id="praktisk">
-            <h2>Praktisk info</h2>
-            <p><b>Pris</b>: 650 kr.</p>
-            <p><b>Varighed</b>: 8 uger</p>
-            <p><b>Sted</b>: Diverse skakklubbers lokaler i samarbejde med Dansk Skak Union</p>
-            <p><b>Niveau</b>: Voksne begyndere</p>
-          </article>
-
-          <article class="promo-image" id="hvorfor">
-            <a class="image-link" href="tilmelding.html" aria-label="Tryk på kasser-knappen for at gå til side 3">
-              <img src="assets/kasser-knap.webp" alt="Grafisk kursuslayout som linker videre til tilmeldingssiden">
-            </a>
-          </article>
+          <div class="button-row">
+            <a class="cta-link" href="tilmelding.html">Tilmeld dig</a>
+            <a class="cta-link secondary" href="#praktisk-info">Se praktisk info</a>
+          </div>
         </div>
+
+        <div class="course-hero__visual">
+          <img src="assets/kursus-hero.jpg"
+            alt="Voksne deltagere og underviser samlet omkring skakundervisning og demonstrationsbræt">
+        </div>
+      </section>
+
+      <section class="course-layout" aria-label="Kursusindhold og praktiske oplysninger">
+        <article class="course-card course-card--board" id="hvad-laerer-du">
+          <div class="course-card__content">
+            <p class="course-card__eyebrow">Fra begynder til spiller</p>
+            <h2>Hvad lærer du?</h2>
+            <ul class="course-checklist">
+              <li>Skakregler og brikker</li>
+              <li>Grundlæggende åbninger</li>
+              <li>Taktik og strategi</li>
+              <li>Spil og analyse</li>
+            </ul>
+          </div>
+          <div class="course-card__media">
+            <img src="assets/kursus-board.jpg" alt="Skakbræt med brikker placeret i en undervisningssituation">
+          </div>
+        </article>
+
+        <aside class="course-sidebar" id="praktisk-info">
+          <section class="info-panel info-panel--practical">
+            <h2>Praktisk info</h2>
+            <ul class="info-list">
+              <li>For voksne <strong>begyndere</strong></li>
+              <li>Ingen forudsætninger</li>
+              <li>Alt materiale inkluderet</li>
+            </ul>
+          </section>
+
+          <section class="info-panel info-panel--price">
+            <h2>Pris</h2>
+            <p class="price-tag">650 <span class="currency">kr.</span></p>
+            <p class="price-description">8 lektioner inkl. kaffe/te og kursusmateriale.</p>
+          </section>
+
+          <section class="info-panel info-panel--why">
+            <h2>Hvorfor lære skak?</h2>
+            <ul class="benefit-list">
+              <li>Mental træning</li>
+              <li>Socialt fællesskab</li>
+              <li>Sjov og fordybelse</li>
+              <li>Aldrig for sent at lære</li>
+            </ul>
+          </section>
+        </aside>
+
+        <article class="course-card course-card--lesson" id="undervisning">
+          <div class="course-card__media">
+            <img src="assets/kursus-undervisning.jpg" alt="Små hold med voksne kursister omkring et skakbræt">
+          </div>
+          <div class="course-card__content">
+            <p class="course-card__eyebrow">Undervisning</p>
+            <h2>Praktiske øvelser og feedback</h2>
+            <p>
+              Du arbejder med opgaver, partier og stillinger i et format, hvor der er tid til spørgsmål og individuel
+              vejledning.
+            </p>
+            <ul class="course-checklist compact">
+              <li>Øvelser ved brættet</li>
+              <li>Forklaringer i øjenhøjde</li>
+              <li>Feedback undervejs</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="course-card course-card--community" id="faellesskab">
+          <div class="course-card__content">
+            <p class="course-card__eyebrow">Fællesskab & hygge</p>
+            <h2>Lokalt hos skakklubben</h2>
+            <p>
+              Kurset foregår i lokale rammer og giver en tryg vej ind i skakmiljøet, hvor læring, kaffe og gode partier
+              går hånd i hånd.
+            </p>
+            <div class="course-route">
+              <span>Lokalt hos skakklubben</span>
+              <span>Dansk Skak Union</span>
+            </div>
+          </div>
+          <div class="course-card__media">
+            <img src="assets/kursus-faellesskab.jpg"
+              alt="Voksne deltagere spiller skak og taler sammen i hyggelige omgivelser">
+          </div>
+        </article>
       </section>
     </main>
 
