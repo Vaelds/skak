@@ -131,7 +131,9 @@ textarea {
   right: 1rem;
   top: calc(100% + 0.5rem);
   width: min(18rem, calc(100vw - 2rem));
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 1rem;
   padding: 0.75rem;
   box-shadow: var(--shadow);
@@ -161,6 +163,10 @@ textarea {
 .site-nav a:focus-visible,
 .cta-link:hover,
 .cta-link:focus-visible,
+.submit-button:hover,
+.submit-button:focus-visible,
+.course-page .course-route a:hover,
+.course-page .course-route a:focus-visible,
 .image-link:hover,
 .image-link:focus-visible {
   background: rgba(239, 10, 143, 0.18);
@@ -371,12 +377,9 @@ textarea {
   text-transform: uppercase;
   font-size: 1.05rem;
   cursor: pointer;
-}
-
-.submit-button:hover,
-.submit-button:focus-visible {
-  filter: brightness(1.08);
-  outline: none;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
 }
 
 .contact-list {
@@ -403,7 +406,6 @@ textarea {
   font-size: 0.95rem;
 }
 
-/* Kun hestemanden på forsiden */
 .horse-man {
   width: 460px;
   max-width: none;
@@ -420,9 +422,8 @@ textarea {
 }
 
 .course-page .course-hero,
-.course-page .course-card,
-.course-page .info-panel {
-  background: linear-gradient(135deg, rgba(3, 34, 37, 0.94), rgba(5, 9, 12, 0.94));
+.course-page .course-card {
+  background: rgba(0, 0, 0, 0.82);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 1.9rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
@@ -481,6 +482,7 @@ textarea {
   font-size: clamp(3rem, 7vw, 5.4rem);
   letter-spacing: -0.02em;
   text-transform: none;
+  color: #f7f0eb;
 }
 
 .course-page .course-hero__lead,
@@ -553,6 +555,7 @@ textarea {
 
 .course-page .course-card h2 {
   font-size: clamp(2rem, 3.2vw, 2.8rem);
+  color: #f7f0eb;
 }
 
 .course-page .course-checklist,
@@ -562,7 +565,7 @@ textarea {
   margin: 0.9rem 0 0;
   padding: 0;
   display: grid;
-  gap: 0.75rem;
+  gap: 0.55rem;
 }
 
 .course-page .course-checklist.compact {
@@ -573,9 +576,20 @@ textarea {
 .course-page .info-list li,
 .course-page .benefit-list li {
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1.1rem;
+  font-size: 0.94rem;
+  line-height: 1.35;
+}
+
+.course-page .course-checklist li {
   color: #f4efe9;
   font-size: clamp(1rem, 1.5vw, 1.1rem);
+  padding-left: 1.5rem;
+}
+
+.course-page .info-list li,
+.course-page .benefit-list li {
+  color: #000;
 }
 
 .course-page .course-checklist li::before,
@@ -585,69 +599,89 @@ textarea {
   position: absolute;
   left: 0;
   top: 0;
-  color: #5fd2a8;
+  color: #70d0a0;
   font-weight: 700;
 }
 
 .course-page .course-sidebar {
   display: grid;
-  gap: 1.25rem;
+  gap: 0.8rem;
 }
 
 .course-page .info-panel {
-  padding: 1.3rem;
-  color: #fff;
+  padding: 1rem 1.05rem;
+  color: #1f2734;
+  background: rgba(255, 255, 255, 0.92);
+  border: none;
+  border-radius: 1.2rem;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(8px);
 }
 
 .course-page .info-panel h2 {
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  color: #1f2430;
+  margin: 0 0 0.4rem;
+  font-size: clamp(2.1rem, 3.2vw, 2.9rem);
+  color: #202735;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
 }
 
-.course-page .info-panel p,
-.course-page .info-panel li {
-  color: #2a3140;
+.course-page .info-panel p {
+  color: #000;
+  font-size: 0.9rem;
+  line-height: 1.3;
 }
 
 .course-page .info-panel--practical,
-.course-page .info-panel--why,
+.course-page .info-panel--why {
+  padding-top: 0.95rem;
+  padding-bottom: 0.95rem;
+}
+
 .course-page .info-panel--price {
-  background: linear-gradient(180deg, rgba(239, 238, 232, 0.97), rgba(245, 244, 239, 0.94));
-  backdrop-filter: none;
+  padding: 0.75rem 0.85rem 0.85rem;
+}
+
+.course-page .price-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
 }
 
 .course-page .price-tag {
-  display: inline-flex;
-  align-items: flex-end;
-  gap: 0.18em;
-  margin: 0.15rem 0 0.7rem;
-  padding: 0.45rem 0.9rem 0.55rem;
-  border-radius: 0.95rem;
-  background: #0d6a69;
-  color: #f3f0ea !important;
-  font-family: "Anton", "Oswald", Arial, sans-serif;
-  font-size: clamp(3.6rem, 7vw, 5.2rem);
-  font-weight: 400;
-  line-height: 0.9;
-  letter-spacing: 0.05em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
+  background: #157a79;
+  border-radius: 0.9rem;
+  min-height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.8rem 0.9rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-.course-page .price-tag,
-.course-page .price-tag * {
-  color: #f3f0ea !important;
+.course-page .price-amount {
+  font-family: "Anton", "Oswald", Arial, sans-serif;
+  font-size: clamp(4.4rem, 9vw, 5.8rem);
+  line-height: 0.82;
+  color: #f3f1ea;
+  letter-spacing: 0.01em;
 }
 
-.course-page .price-tag .currency {
-  color: #f3f0ea !important;
+.course-page .price-currency {
   font-family: "Anton", "Oswald", Arial, sans-serif;
-  font-size: 0.36em;
+  font-size: clamp(1.9rem, 3.5vw, 2.5rem);
   line-height: 1;
-  letter-spacing: 0;
+  color: #f3f1ea;
+  transform: translateY(6px);
 }
 
 .course-page .price-description {
   margin: 0;
+  max-width: 220px;
+  color: #000;
+  font-size: 0.84rem;
+  line-height: 1.22;
 }
 
 .course-page .course-route {
@@ -657,16 +691,22 @@ textarea {
   margin-top: 1rem;
 }
 
-.course-page .course-route span {
+.course-page .course-route span,
+.course-page .course-route a {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 3rem;
-  padding: 0.55rem 1rem;
+  padding: 0.65rem 1.2rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--accent);
   color: #fff;
   font-weight: 700;
   font-size: 1rem;
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
 }
 
 @media (min-width: 800px) {
@@ -679,6 +719,8 @@ textarea {
     display: block;
     width: auto;
     background: transparent;
+    backdrop-filter: none;
+    border: 0;
     box-shadow: none;
     padding: 0;
   }
@@ -826,8 +868,25 @@ textarea {
     grid-template-columns: 1fr;
   }
 
+  .course-page .info-panel h2 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
   .course-page .price-tag {
-    font-size: clamp(3.2rem, 14vw, 4.4rem);
+    min-height: 88px;
+  }
+
+  .course-page .price-amount {
+    font-size: clamp(4rem, 17vw, 5.2rem);
+  }
+
+  .course-page .price-currency {
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
+    transform: translateY(4px);
+  }
+
+  .course-page .price-description {
+    max-width: 100%;
   }
 }
 
