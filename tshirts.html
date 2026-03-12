@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lær Skak for Voksne | T-shirts</title>
+  <meta name="description"
+    content="Vælg din Horse Man T-shirt i sort eller hvid. Med i prisen og tilgængelig i Small, Medium, Large, XL og XXL.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+<style>
+.cta-link,
+.submit-button,
+.payment-submit-button,
+.price-box,
+.price-box-link{
+transition:transform .18s ease,filter .18s ease,box-shadow .18s ease;
+}
+
+.cta-link:hover,
+.submit-button:hover,
+.payment-submit-button:hover,
+.cta-link:focus-visible,
+.submit-button:focus-visible,
+.payment-submit-button:focus-visible{
+filter:brightness(1.15);
+transform:translateY(-2px) scale(1.03);
+box-shadow:0 14px 34px rgba(255,0,140,.45);
+}
+
+.site-nav a{
+position:relative;
+padding:6px 10px;
+border-radius:6px;
+}
+
+.site-nav a::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(255,0,140,.25);
+border-radius:6px;
+opacity:0;
+transition:opacity .18s ease;
+z-index:-1;
+}
+
+.site-nav a:hover::before,
+.site-nav a:focus-visible::before{
+opacity:1;
+}
+</style>
+
+</head>
+
+<body>
+  <div class="site-shell bg-page home-page tshirt-page">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo-link" href="index.html" aria-label="Tilbage til forsiden">
+          <img src="assets/logo.png" alt="Dansk Skak Union logo">
+          <span>LÆR SKAK</span>
+        </a>
+
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false"
+          aria-controls="main-navigation">
+          Menu
+        </button>
+
+        <nav class="site-nav" id="main-navigation" data-nav aria-label="Primær navigation">
+          <ul>
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="kurser.html">Undervisning</a></li>
+            <li><a href="tshirts.html">T-shirts</a></li>
+            <li><a href="tilmelding.html">Tilmelding</a></li>
+            <li><a href="betaling.html">Betaling</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-wrap">
+      <section class="hero tshirt-hero" aria-labelledby="tshirt-title">
+        <div class="hero-card tshirt-hero-card">
+          <p class="section-intro">Kursusgear med attitude, kontrast og et lille hovslag i brysthøjde.</p>
+
+          <h1 id="tshirt-title">
+            HORSE MAN <span class="keep-together">T-SHIRT</span> MED I PRISEN
+          </h1>
+
+          <div class="tshirt-selection-inline" id="vaelg-din-tshirt">
+            <p class="section-intro">Vælg farve og størrelse</p>
+            <h2>Gør dit valg klar</h2>
+
+            <form action="#" method="post" class="tshirt-selection-form">
+              <div class="selection-grid">
+                <div class="selection-field">
+                  <label for="tshirt-color">Farve</label>
+                  <select id="tshirt-color" name="tshirt-color" required>
+                    <option value="">Vælg farve</option>
+                    <option value="hvid">Hvid</option>
+                    <option value="sort">Sort</option>
+                  </select>
+                </div>
+
+                <div class="selection-field">
+                  <label for="tshirt-size">Størrelse</label>
+                  <select id="tshirt-size" name="tshirt-size" required>
+                    <option value="">Vælg størrelse</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    <option value="xl">XL</option>
+                    <option value="xxl">XXL</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="selection-actions">
+                <a class="cta-link" href="tilmelding.html">Fortsæt til tilmelding</a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="hero-visual tshirt-stage">
+          <div class="tshirt-stage-glow" aria-hidden="true"></div>
+          <div class="tshirt-stage-overlay" aria-hidden="true"></div>
+
+          <figure class="tee tee-white">
+            <img src="assets/hvid_tshirt.webp" alt="Hvid Horse Man T-shirt fritskrabt med skyggeeffekt">
+          </figure>
+
+          <figure class="tee tee-black">
+            <img src="assets/sort_tshirt.webp" alt="Sort Horse Man T-shirt fritskrabt med skyggeeffekt">
+          </figure>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/menu.js"></script>
+</body>
+
+</html>

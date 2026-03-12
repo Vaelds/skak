@@ -5,14 +5,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lær Skak for Voksne | Tilmelding</title>
-  <meta name="description"
-    content="Tilmeldingsside med responsivt kontaktformular-layout til skakundervisning for voksne.">
+  <meta name="description" content="Tilmeld dig begynderhold for voksne og vælg samtidig din Horse Man T-shirt.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@400;500;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+<style>
+.cta-link,
+.submit-button,
+.payment-submit-button,
+.price-box,
+.price-box-link{
+transition:transform .18s ease,filter .18s ease,box-shadow .18s ease;
+}
+
+.cta-link:hover,
+.submit-button:hover,
+.payment-submit-button:hover,
+.cta-link:focus-visible,
+.submit-button:focus-visible,
+.payment-submit-button:focus-visible{
+filter:brightness(1.15);
+transform:translateY(-2px) scale(1.03);
+box-shadow:0 14px 34px rgba(255,0,140,.45);
+}
+
+.site-nav a{
+position:relative;
+padding:6px 10px;
+border-radius:6px;
+}
+
+.site-nav a::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(255,0,140,.25);
+border-radius:6px;
+opacity:0;
+transition:opacity .18s ease;
+z-index:-1;
+}
+
+.site-nav a:hover::before,
+.site-nav a:focus-visible::before{
+opacity:1;
+}
+</style>
+
 </head>
 
 <body>
@@ -21,7 +64,7 @@
       <div class="header-inner">
         <a class="logo-link" href="index.html" aria-label="Tilbage til forsiden">
           <img src="assets/logo.png" alt="Dansk Skak Union logo">
-          <span>Lær Skak</span>
+          <span>LÆR SKAK</span>
         </a>
 
         <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false"
@@ -33,7 +76,9 @@
           <ul>
             <li><a href="index.html">Forside</a></li>
             <li><a href="kurser.html">Undervisning</a></li>
+            <li><a href="tshirts.html">T-shirts</a></li>
             <li><a href="tilmelding.html">Tilmelding</a></li>
+            <li><a href="betaling.html">Betaling</a></li>
           </ul>
         </nav>
       </div>
@@ -80,6 +125,27 @@
                     <option>Sverige</option>
                     <option>Norge</option>
                     <option>Tyskland</option>
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label for="tshirt-color">T-shirt farve *</label>
+                  <select id="tshirt-color" name="tshirt-color" required>
+                    <option value="">Vælg farve</option>
+                    <option value="sort">Sort</option>
+                    <option value="hvid">Hvid</option>
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label for="tshirt-size">T-shirt størrelse *</label>
+                  <select id="tshirt-size" name="tshirt-size" required>
+                    <option value="">Vælg størrelse</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    <option value="xl">XL</option>
+                    <option value="xxl">XXL</option>
                   </select>
                 </div>
 
@@ -131,6 +197,10 @@
                 <p>Mandag til fredag<br>09.00 til 16.00</p>
               </div>
             </dl>
+
+            <div class="payment-side-cta">
+              <a class="cta-link" href="betaling.html">Betal 650 kr.</a>
+            </div>
           </aside>
         </div>
       </section>

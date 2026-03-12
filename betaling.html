@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lær Skak for Voksne | Betaling</title>
+  <meta name="description"
+    content="Betal for Lær Skak for Voksne. Samme visuelle stil som tilmeldingssiden og T-shirt inkluderet i prisen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+<style>
+.cta-link,
+.submit-button,
+.payment-submit-button,
+.price-box,
+.price-box-link{
+transition:transform .18s ease,filter .18s ease,box-shadow .18s ease;
+}
+
+.cta-link:hover,
+.submit-button:hover,
+.payment-submit-button:hover,
+.cta-link:focus-visible,
+.submit-button:focus-visible,
+.payment-submit-button:focus-visible{
+filter:brightness(1.15);
+transform:translateY(-2px) scale(1.03);
+box-shadow:0 14px 34px rgba(255,0,140,.45);
+}
+
+.site-nav a{
+position:relative;
+padding:6px 10px;
+border-radius:6px;
+}
+
+.site-nav a::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(255,0,140,.25);
+border-radius:6px;
+opacity:0;
+transition:opacity .18s ease;
+z-index:-1;
+}
+
+.site-nav a:hover::before,
+.site-nav a:focus-visible::before{
+opacity:1;
+}
+</style>
+
+</head>
+
+<body>
+  <div class="site-shell bg-page">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo-link" href="index.html" aria-label="Tilbage til forsiden">
+          <img src="assets/logo.png" alt="Dansk Skak Union logo">
+          <span>LÆR SKAK</span>
+        </a>
+
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false"
+          aria-controls="main-navigation">
+          Menu
+        </button>
+
+        <nav class="site-nav" id="main-navigation" data-nav aria-label="Primær navigation">
+          <ul>
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="kurser.html">Undervisning</a></li>
+            <li><a href="tshirts.html">T-shirts</a></li>
+            <li><a href="tilmelding.html">Tilmelding</a></li>
+            <li><a href="betaling.html">Betaling</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-wrap page-section">
+      <section class="contact-card payment-contact-card" aria-labelledby="betaling-title">
+        <div class="form-layout">
+          <div>
+            <h1 class="form-title" id="betaling-title">Betaling begynderhold<br>for voksne</h1>
+
+            <form action="#" method="post" class="payment-form">
+              <div class="form-grid">
+                <div class="form-field full">
+                  <label for="card-name">Navn på kort *</label>
+                  <input id="card-name" name="card-name" type="text" placeholder="Navn som på kortet" required>
+                </div>
+
+                <div class="form-field full">
+                  <label for="card-number">Kortnummer *</label>
+                  <input id="card-number" name="card-number" type="text" inputmode="numeric"
+                    placeholder="1234 5678 9012 3456" required>
+                </div>
+
+                <div class="form-field">
+                  <label for="card-expiry">Udløbsdato *</label>
+                  <input id="card-expiry" name="card-expiry" type="text" inputmode="numeric" placeholder="MM/ÅÅ"
+                    required>
+                </div>
+
+                <div class="form-field">
+                  <label for="card-cvc">CVC *</label>
+                  <input id="card-cvc" name="card-cvc" type="text" inputmode="numeric" placeholder="123" required>
+                </div>
+
+                <div class="form-field full">
+                  <label for="card-email">E-mail *</label>
+                  <input id="card-email" name="card-email" type="email" placeholder="din@email.dk" required>
+                </div>
+              </div>
+
+              <button class="submit-button payment-submit-button" type="submit">Betal 650 kr.</button>
+            </form>
+          </div>
+
+          <aside aria-label="Betalingsoversigt">
+            <dl class="contact-list payment-contact-list">
+              <div class="contact-item">
+                <h3>Beløb</h3>
+                <p>650 kr.</p>
+              </div>
+
+              <div class="contact-item">
+                <h3>Indhold</h3>
+                <p>8 lektioner<br>Materialer inkluderet<br>Kaffe/te med i prisen<br>1 T-shirt inkluderet</p>
+              </div>
+
+              <div class="contact-item">
+                <h3>T-shirt</h3>
+                <p>Vælg mellem sort eller hvid<br>Størrelser: Small, Medium, Large, XL, XXL</p>
+              </div>
+
+              <div class="contact-item">
+                <h3>Kontakt</h3>
+                <p>dsu@skak.dk<br>+45 20 35 67 16</p>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-wrap">
+        <p>Klik på logoet for at vende tilbage til forsiden</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/menu.js"></script>
+</body>
+
+</html>

@@ -14,6 +14,50 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;500;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .cta-link,
+    .submit-button,
+    .payment-submit-button,
+    .price-box,
+    .price-box-link {
+      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+    }
+
+    .cta-link:hover,
+    .submit-button:hover,
+    .payment-submit-button:hover,
+    .cta-link:focus-visible,
+    .submit-button:focus-visible,
+    .payment-submit-button:focus-visible {
+      filter: brightness(1.15);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 14px 34px rgba(255, 0, 140, .45);
+    }
+
+    .site-nav a {
+      position: relative;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    .site-nav a::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 0, 140, .25);
+      border-radius: 6px;
+      opacity: 0;
+      transition: opacity .18s ease;
+      z-index: -1;
+    }
+
+    .site-nav a:hover::before,
+    .site-nav a:focus-visible::before {
+      opacity: 1;
+    }
+  </style>
+
 </head>
 
 <body class="course-page">
@@ -22,7 +66,7 @@
       <div class="header-inner">
         <a class="logo-link" href="index.html" aria-label="Tilbage til forsiden">
           <img src="assets/logo.png" alt="Dansk Skak Union logo">
-          <span>Lær Skak</span>
+          <span>LÆR SKAK</span>
         </a>
 
         <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false"
@@ -34,7 +78,9 @@
           <ul>
             <li><a href="index.html">Forside</a></li>
             <li><a href="kurser.html">Undervisning</a></li>
+            <li><a href="tshirts.html">T-shirts</a></li>
             <li><a href="tilmelding.html">Tilmelding</a></li>
+            <li><a href="betaling.html">Betaling</a></li>
           </ul>
         </nav>
       </div>
@@ -66,8 +112,11 @@
           </div>
 
           <div class="button-row">
-            <a class="cta-link" href="tilmelding.html">Tilmeld dig</a>
-            <a class="cta-link secondary" href="#praktisk-info">Se praktisk info</a>
+            <a class="cta-link" href="betaling.html">Tilmeld dig</a>
+            <a class="cta-link secondary dsu-button" href="https://www.skak.dk" target="_blank"
+              rel="noopener noreferrer">
+              Dansk Skak Union
+            </a>
           </div>
         </div>
 
@@ -101,17 +150,20 @@
               <li>For voksne <strong>begyndere</strong></li>
               <li>Ingen forudsætninger</li>
               <li>Alt materiale inkluderet</li>
+              <li><strong>1 Horse Man T-shirt inkluderet</strong></li>
             </ul>
           </section>
 
           <section class="info-panel info-panel--price">
-            <div class="price-box">
-              <div class="price-tag">
-                <span class="price-amount">650</span>
-                <span class="price-currency">kr.</span>
+            <a class="price-box-link" href="betaling.html" aria-label="Gå til betaling af 650 kroner">
+              <div class="price-box">
+                <div class="price-tag">
+                  <span class="price-amount">650</span>
+                  <span class="price-currency">kr.</span>
+                </div>
+                <p class="price-description">8 lektioner inkl. kaffe/te, materialer og 1 T-shirt.</p>
               </div>
-              <p class="price-description">8 lektioner inkl. kaffe/te og kursusmateriale.</p>
-            </div>
+            </a>
           </section>
 
           <section class="info-panel info-panel--why">
@@ -149,12 +201,9 @@
             <p class="course-card__eyebrow">Fællesskab & hygge</p>
             <h2>Lokalt hos skakklubben</h2>
             <p>
-              Kurset foregår i lokale rammer og giver en tryg vej ind i skakmiljøet, hvor læring, kaffe og gode partier
-              går hånd i hånd.
+              Kurset foregår i lokale rammer og giver en tryg vej ind i skakmiljøet, hvor læring,
+              kaffe og gode partier går hånd i hånd.
             </p>
-            <div class="course-route">
-              <a href="https://www.skak.dk" target="_blank" rel="noopener noreferrer">Dansk Skak Union</a>
-            </div>
           </div>
           <div class="course-card__media">
             <img src="assets/kursus-faellesskab.jpg"
