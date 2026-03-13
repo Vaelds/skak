@@ -86,7 +86,7 @@ textarea {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.72)), url("../assets/skak-bg.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.72)), url("../assets/skak-bg.webp");
   background-size: cover;
   background-position: center;
   z-index: -2;
@@ -94,7 +94,7 @@ textarea {
 
 .home-page::before,
 .tshirt-page.bg-page::before {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.7)), url("../assets/forside-bg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.7)), url("../assets/forside-bg.webp");
 }
 
 /* =========================================================
@@ -183,7 +183,11 @@ textarea {
 .submit-button:hover,
 .submit-button:focus-visible,
 .course-page .course-route a:hover,
-.course-page .course-route a:focus-visible,
+.course-page .course-route a:focus-visible {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+  outline: none;
+}
 
 /* =========================================================
    HORSE MAN HOVER (INDEX)
@@ -1419,7 +1423,6 @@ textarea {
   }
 }
 
-
 /* =========================================================
    11. INDEX MOBILE WIDTH FIX
    Keep homepage mobile width aligned with the other pages only
@@ -1463,5 +1466,50 @@ textarea {
     width: min(100%, 24rem);
     max-width: 100%;
     height: auto;
+  }
+}
+
+/* =========================================================
+   11A. MOBILE WIDTH SAFETY NET FOR HOME + TSHIRT
+========================================================= */
+@media (max-width: 720px) {
+  .home-page .page-wrap,
+  .tshirt-page .page-wrap,
+  .home-page .header-inner,
+  .tshirt-page .header-inner {
+    width: min(100% - 1.5rem, var(--max-width));
+  }
+
+  .home-page .hero,
+  .tshirt-page .hero,
+  .home-page .hero-card,
+  .tshirt-page .hero-card,
+  .home-page .index-hero-card,
+  .tshirt-page .tshirt-hero-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-inline: 0;
+  }
+
+  .home-page .hero-card,
+  .tshirt-page .hero-card {
+    padding: 1.25rem;
+  }
+
+  .home-page .hero h1,
+  .tshirt-page .hero h1,
+  .home-page .page-title,
+  .tshirt-page .page-title,
+  .home-page .form-title,
+  .tshirt-page .form-title {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .tshirt-page .selection-grid,
+  .tshirt-page .selection-field,
+  .tshirt-page .selection-field select {
+    min-width: 0;
   }
 }
