@@ -1418,3 +1418,50 @@ textarea {
     line-height: 1.15;
   }
 }
+
+
+/* =========================================================
+   11. INDEX MOBILE WIDTH FIX
+   Keep homepage mobile width aligned with the other pages only
+========================================================= */
+@media (max-width: 720px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .home-page .page-wrap,
+  .home-page .header-inner {
+    width: min(100% - 2rem, var(--max-width));
+  }
+
+  .home-page .hero,
+  .home-page .index-mobile-layout {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .home-page .index-hero-card {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  .home-page .hero-visual {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .home-page .hero-visual .image-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .home-page .horse-man {
+    width: min(100%, 24rem);
+    max-width: 100%;
+    height: auto;
+  }
+}
