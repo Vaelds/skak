@@ -75,12 +75,6 @@ textarea {
   position: relative;
   min-height: 100vh;
   isolation: isolate;
-  display: flex;
-  flex-direction: column;
-}
-
-main.page-wrap {
-  flex: 1 0 auto;
 }
 
 .page-wrap {
@@ -92,7 +86,7 @@ main.page-wrap {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.72)), url("../assets/skak-bg.webp");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.72)), url("../assets/skak-bg.jpg");
   background-size: cover;
   background-position: center;
   z-index: -2;
@@ -100,7 +94,7 @@ main.page-wrap {
 
 .home-page::before,
 .tshirt-page.bg-page::before {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.7)), url("../assets/forside-bg.webp");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.7)), url("../assets/forside-bg.png");
 }
 
 /* =========================================================
@@ -523,10 +517,6 @@ main.page-wrap {
   font-size: 0.95rem;
 }
 
-.site-footer img {
-  display: inline-block;
-}
-
 .horse-man {
   width: 460px;
   max-width: none;
@@ -898,11 +888,7 @@ main.page-wrap {
 }
 
 .tshirt-page .site-footer {
-  display: block;
-  padding: 1rem 0 2rem;
-  color: rgba(255, 255, 255, 0.7);
-  text-align: center;
-  font-size: 0.95rem;
+  display: none;
 }
 
 .keep-together {
@@ -1021,6 +1007,7 @@ main.page-wrap {
    09.6 Hover movement on shirts
 --------------------------------------------------------- */
 
+/* independent hover on each T-shirt */
 .tee-white:hover,
 .tee-white:focus-within {
   transform: translateX(var(--tee-white-shift-x)) translateY(calc(var(--tee-white-shift-y) - 8px)) rotate(-9deg) scale(1.2);
@@ -1365,6 +1352,7 @@ main.page-wrap {
 }
 
 /* ===== TSHIRT HOVER 20% ===== */
+/* independent hover on each T-shirt */
 .tee-white:hover,
 .tee-white:focus-within {
   transform: translateX(var(--tee-white-shift-x)) translateY(calc(var(--tee-white-shift-y) - 8px)) rotate(-9deg) scale(1.2);
@@ -1423,7 +1411,7 @@ main.page-wrap {
     margin: 0 0 1rem;
   }
 
-  .home-page:not(.tshirt-page) .selection-actions {
+  .home-page:not(.tshirt-page) .index-mobile-layout .selection-actions {
     margin-top: 2.2rem;
   }
 }
