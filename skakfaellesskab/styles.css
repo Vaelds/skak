@@ -18,14 +18,15 @@ footer{border-top:1px solid var(--line);padding-top:50px;background:#0e0d0f}.foo
 .audience-copy p,.curriculum p,.level-panel p,.faq-list details p,.business-benefits p,.package>p:not(.eyebrow,.package-flag),.region-card p,.steps-grid p,.numbered-items p,.story-grid p:not(.eyebrow),.section-heading>p{font-size:1rem} .brand small{font-size:.75rem;letter-spacing:.07em} .quote-summary>.text-button{font-size:.875rem}
 
 /* Benefit explanations: mouse rollover, keyboard and touch. */
-.benefit-strip .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:start;gap:0;padding-block:0}
+.benefit-strip .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch;gap:0;padding-block:0}
 .benefit-item{min-width:0;padding:20px 18px;border-inline-end:1px solid #ffffff0b;transition:background .18s ease}
-.benefit-item:first-child{padding-left:0}.benefit-item:last-child{border-inline-end:0}
+.benefit-item:last-child{border-inline-end:0}
 .benefit-toggle{display:flex;align-items:flex-start;gap:14px;width:100%;min-height:32px;border:0;padding:3px 0;background:none;color:var(--text);text-align:left;font:600 .875rem/1.6 Montserrat,Arial,sans-serif}
 .benefit-icon{display:inline-block;flex:0 0 13px;color:var(--pink-light);font:400 1.4rem/1.1 Montserrat,Arial,sans-serif;transition:transform .18s ease}
-.benefit-description{margin:13px 0 0;padding-left:27px;color:#cfc5d3;font:400 .875rem/1.75 Montserrat,Arial,sans-serif;max-width:320px}
+.benefit-description{margin:13px 0 0;padding-left:27px;color:#cfc5d3;font:400 .875rem/1.75 Montserrat,Arial,sans-serif;max-width:320px;min-height:7em}
+/* Reserve four lines, including while hidden; longer wraps stay in the layout. */
+.benefit-description[hidden]{display:block!important;visibility:hidden}
 .benefit-item.is-open{background:#25131e}.benefit-item.is-open .benefit-toggle{color:var(--pink-light)}.benefit-item.is-open .benefit-icon{transform:rotate(45deg)}
-.benefit-item:first-child.is-open{padding-left:18px}
 /* Standalone adult course, with the same complete-package logic as firmaskak. */
 .private-package-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:start}
 .private-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;border-block:1px solid #c9c4c8;margin-bottom:34px;padding-block:22px}
