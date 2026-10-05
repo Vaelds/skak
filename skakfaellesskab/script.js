@@ -11,6 +11,37 @@ document.addEventListener('click', event => { if (!event.target.closest('.site-h
 $$('#navigation a').forEach(link => link.addEventListener('click', closeMenu));
 window.addEventListener('resize', () => { if (window.innerWidth > 800) closeMenu(); });
 
+// A hover preview also works with keyboard focus and a persistent tap/click.
+$$('.benefit-item').forEach(item => {
+  const button = $('.benefit-toggle', item);
+  const description = $('.benefit-description', item);
+  let pinned = false;
+  let hovered = false;
+  const setOpen = open => {
+    button.setAttribute('aria-expanded', String(open));
+    description.hidden = !open;
+    item.classList.toggle('is-open', open);
+  };
+  setOpen(false);
+  item.addEventListener('pointerenter', event => {
+    if (event.pointerType !== 'mouse') return;
+    hovered = true;
+    setOpen(true);
+  });
+  item.addEventListener('pointerleave', () => {
+    hovered = false;
+    if (!pinned && !item.contains(document.activeElement)) setOpen(false);
+  });
+  item.addEventListener('focusin', () => setOpen(true));
+  item.addEventListener('focusout', event => {
+    if (!pinned && !hovered && !item.contains(event.relatedTarget)) setOpen(false);
+  });
+  button.addEventListener('click', () => { pinned = !pinned; setOpen(pinned); });
+  button.addEventListener('keydown', event => {
+    if (event.key === 'Escape') { pinned = false; setOpen(false); }
+  });
+});
+
 function openDialog(id) { const dialog = document.getElementById(id); if (!dialog || dialog.open) return; dialog.showModal(); document.body.classList.add('dialog-open'); }
 $$('[data-dialog]').forEach(button => button.addEventListener('click', () => openDialog(button.dataset.dialog)));
 $$('dialog').forEach(dialog => {
@@ -20,9 +51,9 @@ $$('dialog').forEach(dialog => {
 });
 
 const levelCopy = {
-  new: 'Start med en introduktion. Du får styr på brikkerne og prøver små spil med andre, som også er nye.',
-  some: 'Et begynderforløb giver dig et sikkert fundament. Du kan reglerne lidt, og nu skal du have styr på, hvorfor et træk er godt.',
-  online: 'Prøv en åben klubaften eller et hold for let øvede. Fortæl klubben om din erfaring online, så du kan møde passende modstand.'
+  new: 'Begynderpakken starter med brikkerne og reglerne. Du får hjælp fra instruktøren og lærer sammen med andre voksne begyndere.',
+  some: 'Du kan sagtens være med, selv om du kender lidt til reglerne. Fortæl instruktøren om dit niveau, så øvelser og spillemakker passer til dig.',
+  online: 'Fortæl kursusarrangøren om din erfaring online. Sammen finder I ud af, om begynderpakken eller et fortsætterforløb passer bedst til dig. Klubmedlemskab er ikke nødvendigt.'
 };
 $$('[data-level]').forEach(button => button.addEventListener('click', () => { $$('[data-level]').forEach(b => b.setAttribute('aria-pressed', String(b === button))); $('#level-recommendation').textContent = levelCopy[button.dataset.level]; }));
 
@@ -65,12 +96,17 @@ let draftText = '';
 $$('[data-enquiry]').forEach(button => button.addEventListener('click', () => {
   const beginner = button.dataset.enquiry === 'beginner';
   $('#enquiry-form').reset(); $('#enquiry-form').hidden = false; $('#enquiry-result').hidden = true;
-  $('#enquiry-title').textContent = beginner ? 'Prøv en tilmelding' : 'Forbered en forespørgsel';
-  $('#enquiry-type').value = beginner ? 'Interesse for begynderhold' : 'Forespørgsel om firmaskak';
+  $('#enquiry-title').textContent = beginner ? 'Tilmelding til begynderpakken' : 'Forbered en forespørgsel';
+  $('#enquiry-type').value = beginner ? 'Tilmelding til selvstændig begynderpakke' : 'Forespørgsel om firmaskak';
   $('#enquiry-package').value = button.dataset.package;
   $('#company-label').hidden = beginner;
   $('input[name="company"]').disabled = beginner;
   $('input[name="company"]').required = !beginner;
+  $('#enquiry-result-help').textContent = beginner
+    ? 'Din kladde er klar til kursusarrangøren. Der er ikke reserveret en plads eller gennemført en betaling. Du behøver ikke kontakte en skakklub for at vælge pakken.'
+    : 'Du har ikke sendt en forespørgsel. Gem teksten som en kladde til udbyderen af firmaskak.';
+  $('#enquiry-next-link').href = beginner ? 'laer-skak.html#kursuspakke' : 'virksomheder.html#pakker';
+  $('#enquiry-next-link').textContent = beginner ? 'Tilbage til begynderpakken' : 'Tilbage til firmapakkerne';
   draftText = ''; openDialog('enquiry-dialog');
 }));
 $('#enquiry-form').addEventListener('submit', event => {
@@ -93,7 +129,7 @@ function searchClubs() {
 }
 if ($('#club-search')) { $('#club-search').addEventListener('input', searchClubs); $('#clear-search').addEventListener('click', () => { $('#club-search').value=''; searchClubs(); $('#club-search').focus(); }); }
 if ($('#copy-intro')) $('#copy-intro').addEventListener('click', async () => {
-  const text='Hej! Jeg er voksen og vil gerne lære skak. Har I et begynderhold eller en aften, hvor jeg kan komme forbi? Jeg vil også gerne høre om pris, tidspunkter, og hvem der tager imod mig. Venlig hilsen';
+  const text='Hej! Jeg er voksen begynder og vil gerne møde andre, der spiller skak. Har I en åben aften eller hyggespil, hvor jeg kan komme forbi? Jeg vil også gerne høre om tidspunkter, kontingent, andre begyndere og hvem der tager imod mig. Venlig hilsen';
   try { await navigator.clipboard.writeText(text); $('#copy-status').textContent = 'Teksten er kopieret. Du kan nu sætte den ind i en mail til klubben.'; }
   catch { $('#copy-status').textContent = text; $('#copy-status').setAttribute('tabindex','-1'); $('#copy-status').focus(); }
 });

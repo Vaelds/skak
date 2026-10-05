@@ -16,3 +16,31 @@ footer{border-top:1px solid var(--line);padding-top:50px;background:#0e0d0f}.foo
 
 /* Body copy stays readable at every viewport. */
 .audience-copy p,.curriculum p,.level-panel p,.faq-list details p,.business-benefits p,.package>p:not(.eyebrow,.package-flag),.region-card p,.steps-grid p,.numbered-items p,.story-grid p:not(.eyebrow),.section-heading>p{font-size:1rem} .brand small{font-size:.75rem;letter-spacing:.07em} .quote-summary>.text-button{font-size:.875rem}
+
+/* Benefit explanations: mouse rollover, keyboard and touch. */
+.benefit-strip .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:start;gap:0;padding-block:0}
+.benefit-item{min-width:0;padding:20px 18px;border-inline-end:1px solid #ffffff0b;transition:background .18s ease}
+.benefit-item:first-child{padding-left:0}.benefit-item:last-child{border-inline-end:0}
+.benefit-toggle{display:flex;align-items:flex-start;gap:14px;width:100%;min-height:32px;border:0;padding:3px 0;background:none;color:var(--text);text-align:left;font:600 .875rem/1.6 Montserrat,Arial,sans-serif}
+.benefit-icon{display:inline-block;flex:0 0 13px;color:var(--pink-light);font:400 1.4rem/1.1 Montserrat,Arial,sans-serif;transition:transform .18s ease}
+.benefit-description{margin:13px 0 0;padding-left:27px;color:#cfc5d3;font:400 .875rem/1.75 Montserrat,Arial,sans-serif;max-width:320px}
+.benefit-item.is-open{background:#25131e}.benefit-item.is-open .benefit-toggle{color:var(--pink-light)}.benefit-item.is-open .benefit-icon{transform:rotate(45deg)}
+.benefit-item:first-child.is-open{padding-left:18px}
+/* Standalone adult course, with the same complete-package logic as firmaskak. */
+.private-package-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:start}
+.private-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;border-block:1px solid #c9c4c8;margin-bottom:34px;padding-block:22px}
+.private-facts strong{font:500 2.7rem/1.2 Oswald,Arial,sans-serif;color:#a20761}.private-facts p{font-size:.875rem;line-height:1.6;margin:7px 0 0;color:#594e5d}
+.private-package-content h3{font-size:2.05rem}.private-package-content>.check-list{margin-block:28px}
+.private-package-content>.check-list li{font-size:.9375rem;line-height:1.7}
+.private-location{margin-top:30px;padding-top:25px;border-top:1px solid #c9c4c8}.private-location .eyebrow{margin-bottom:12px}.private-location p:last-child{font-size:.9375rem;color:#594e5d}
+.private-package-card{border:2px solid var(--pink);padding:34px;box-shadow:9px 9px 0 #dbcbd7}
+.private-package-card h3{font-size:3.1rem}.private-package-card .package-price{margin-top:13px;margin-bottom:16px}.private-package-card .package-price strong{font-size:3.5rem}
+.private-package-card .private-price-detail{font-size:.9375rem!important;font-weight:500;color:#2d2530!important;line-height:1.75}
+.private-package-card .private-package-note{font-size:.8125rem!important;margin-top:18px}.private-package-card .button{width:100%}
+.curriculum.curriculum-eight{grid-template-columns:repeat(4,minmax(0,1fr))}
+.curriculum.curriculum-eight article{border-right:1px solid #c9c4c8;border-bottom:1px solid #c9c4c8}
+.curriculum.curriculum-eight article:nth-child(4n){border-right:0}.curriculum.curriculum-eight article:nth-last-child(-n+4){border-bottom:0}
+.steps-grid.private-steps{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:0}.private-steps p{color:#c4baca}.private-steps article>span{color:var(--pink-light)}.private-steps article{border-color:var(--line)}
+@media(max-width:1000px){.private-package-grid{gap:32px;grid-template-columns:1.1fr 1fr}.private-package-card{padding:26px}.private-facts{gap:15px}.curriculum.curriculum-eight{grid-template-columns:repeat(2,minmax(0,1fr))}.curriculum.curriculum-eight article{border-right:1px solid #c9c4c8;border-bottom:1px solid #c9c4c8}.curriculum.curriculum-eight article:nth-child(2n){border-right:0}.curriculum.curriculum-eight article:nth-last-child(-n+4){border-bottom:1px solid #c9c4c8}.curriculum.curriculum-eight article:nth-last-child(-n+2){border-bottom:0}}
+@media(max-width:800px){.benefit-strip .wrap{grid-template-columns:repeat(2,minmax(0,1fr));gap:0;padding-block:0}.benefit-item:first-child{padding-left:18px}.benefit-item{border-bottom:1px solid #ffffff0b;padding:18px}.benefit-description{max-width:none}.private-package-grid{grid-template-columns:1fr;gap:30px}.private-package-card{max-width:580px;width:100%}.private-package-card h3 br{display:initial}.private-package-card .button{align-self:stretch}.private-package-content h3{font-size:2rem}}
+@media(max-width:520px){.benefit-strip .wrap{grid-template-columns:1fr;padding-block:0}.benefit-item{padding:16px 12px;border-inline-end:0}.benefit-item:first-child,.benefit-item:first-child.is-open{padding-left:12px}.benefit-toggle{align-items:center;min-height:30px;font-size:.875rem}.benefit-description{margin-top:8px;padding-left:27px}.private-facts{gap:12px}.private-facts strong{font-size:2.4rem}.private-facts p{font-size:.75rem}.private-package-card{padding:26px 23px;box-shadow:6px 6px 0 #dbcbd7}.private-package-card h3{font-size:2.8rem}.curriculum.curriculum-eight{grid-template-columns:1fr}.curriculum.curriculum-eight article,.curriculum.curriculum-eight article:nth-child(4n),.curriculum.curriculum-eight article:nth-child(2n),.curriculum.curriculum-eight article:nth-last-child(-n+2){border-right:0;border-bottom:1px solid #c9c4c8}.curriculum.curriculum-eight article:last-child{border-bottom:0}.steps-grid.private-steps{grid-template-columns:1fr}}
